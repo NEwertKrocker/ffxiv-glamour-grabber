@@ -1,13 +1,25 @@
-
+import React, { Component } from 'react';
+import Form from './Form'
 import '../css/App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+
+    }
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <header className="App-header">
+        <p>FFXIV Glamour Grabber</p>
+        </header>
+        <Form />
+      </div>
+    );
+  }
 }
 
 export default App;
