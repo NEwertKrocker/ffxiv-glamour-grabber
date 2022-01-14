@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { fetchChars } from '../ApiCalls'
+import { fetchChars } from '../ApiCalls';
+import Results from './SearchResults';
 import '../css/Form.css';
 
 class Form extends Component {
@@ -8,6 +9,7 @@ class Form extends Component {
     this.state = {
       charName: '',
       serverName: '',
+      searchResults: []
     }
   }
 
@@ -18,6 +20,7 @@ class Form extends Component {
   submitSearch = event => {
     event.preventDefault();
     fetchChars(this.state.charName, this.state.serverName)
+      .then(data => this.setState({ searchResults: data.Results }))
     this.clearInputs();
   }
 
@@ -30,25 +33,28 @@ class Form extends Component {
 
   render(){
     return (
-      <form>
-        <p> Whose outfit do you want to steal? </p>
-        <input
-          type='text'
-          placeholder='Character Name'
-          name='charName'
-          value={this.state.charName}
-          onChange={event => this.handleChange(event)}
-        />
-        <p> What server were they on? </p>
-        <input
-          type='text'
-          placeholder='Server'
-          name='serverName'
-          value={this.state.serverName}
-          onChange={event => this.handleChange(event)}
-        />
-        <button onClick={event => this.submitSearch(event)}>Grab that Glamour!</button>
-      </form>
+      <div>
+        <form>
+          <p> Whose outfit do you want to steal? </p>
+          <input
+            type='text'
+            placeholder='Character Name'
+            name='charName'
+            value={this.state.charName}
+            onChange={event => this.handleChange(event)}
+          />
+          <p> What server were they on? </p>
+          <input
+            type='text'
+            placeholder='Server'
+            name='serverName'
+            value={this.state.serverName}
+            onChange={event => this.handleChange(event)}
+          />
+          <button onClick={event => this.submitSearch(event)}>Grab that Glamour!</button>
+        </form>
+        <Results searchResults={this.state.searchResults}/>
+      </div>
     )
   }
 }

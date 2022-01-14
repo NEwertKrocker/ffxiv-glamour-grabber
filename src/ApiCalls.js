@@ -6,7 +6,6 @@ const fetchChars = (charName, serverName) => {
       }
       throw response.message
     })
-    .then(data => console.log(data))
 }
 
 export { fetchChars }
