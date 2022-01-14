@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Form from './Form'
+import '../Assets/background.jpeg';
 import '../css/App.css';
 
 class App extends Component {

@@ -1,0 +1,27 @@
+.result {
+  display: flex;
+  color: white;
+  background-color: #1d1d1d;
+  min-width: 30%;
+  border-radius: 5px;
+  margin: 5px;
+  font-size: larger;
+}
+
+.result:hover {
+  border: 3px solid orange;
+}
+
+p {
+  align-self: center;
+  padding: 15px;
+}
+
+img {
+  border-radius: 5px;
+}
+
+.server {
+  font-size: smaller;
+  font-weight: lighter;
+}
