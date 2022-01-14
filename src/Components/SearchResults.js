@@ -1,11 +1,16 @@
 import React from 'react';
 import Result from './Result';
+import { Link } from 'react-router-dom';
 import '../css/SearchResults.css'
 
 const Results = ({ searchResults }) => {
 
   let results = searchResults.map((result) => {
-    return <Result avatar={result.Avatar} id={result.ID} name={result.Name} server={result.Server}/>
+    const id = result.ID;
+    return (
+      <Link to={`/${id}`}>
+        <Result avatar={result.Avatar} key={id} id={id} name={result.Name} server={result.Server} />
+      </Link>)
   })
 
   return(

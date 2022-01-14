@@ -9,7 +9,7 @@ const fetchChars = (charName, serverName) => {
 }
 
 const getCharOutfit = (charID) => {
-  return fetch(`https://xivapi.com/character/${charID}`)
+  return fetch(`https://xivapi.com/character/${charID}`, { mode: 'cors' })
     .then(response =>
       {if (response.ok){
         return response.json()
@@ -18,4 +18,4 @@ const getCharOutfit = (charID) => {
     })
 }
 
-export { fetchChars }
+export { fetchChars, getCharOutfit };

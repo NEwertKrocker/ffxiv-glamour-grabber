@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/Result.css'
 
-const Result = ({ avatar, id, name, server}) => {
+const Result = ({ avatar, id, name, server }) => {
 
   return (
     <div className='result' id={id}>

@@ -4,12 +4,13 @@ import Results from './SearchResults';
 import '../css/Form.css';
 
 class Form extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       charName: '',
       serverName: '',
-      searchResults: []
+      searchResults: [],
+      setChar: props.setChar
     }
   }
 
@@ -53,7 +54,7 @@ class Form extends Component {
           />
           <button onClick={event => this.submitSearch(event)}>Grab that Glamour!</button>
         </form>
-        <Results searchResults={this.state.searchResults}/>
+        <Results searchResults={this.state.searchResults} setChar={this.setChar}/>
       </div>
     )
   }
