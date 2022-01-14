@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Form from './Form'
+import Form from './Form';
+import Outfit from './Outfit';
 import '../Assets/background.jpeg';
 import '../css/App.css';
 
@@ -16,9 +17,13 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-        <p>FFXIV Glamour Grabber</p>
+          <p>FFXIV Glamour Grabber</p>
         </header>
-        <Form />
+        <Routes>
+          <Route path='/' element={<Form />} />
+          <Route path='/:character' element={<Outfit />} />
+        </Routes>
+
       </div>
     );
   }

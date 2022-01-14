@@ -8,4 +8,14 @@ const fetchChars = (charName, serverName) => {
     })
 }
 
+const getCharOutfit = (charID) => {
+  return fetch(`https://xivapi.com/character/${charID}`)
+    .then(response =>
+      {if (response.ok){
+        return response.json()
+      }
+      throw response.message
+    })
+}
+
 export { fetchChars }
