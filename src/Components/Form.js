@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchChars } from '../ApiCalls';
+import { fetchChars, fetchServers } from '../ApiCalls';
 import Results from './SearchResults';
 import '../css/Form.css';
 
@@ -8,7 +8,7 @@ class Form extends Component {
     super(props);
     this.state = {
       charName: '',
-      serverName: '',
+      servers: [],
       searchResults: [],
       setChar: props.setChar
     }
@@ -28,8 +28,12 @@ class Form extends Component {
   clearInputs = () => {
     this.setState({
       charName: '',
-      serverName: '',
     })
+  }
+
+  componentDidMount(){
+    fetchServers()
+      .then(data => {this.setState({ servers: data })})
   }
 
   render(){
@@ -45,13 +49,16 @@ class Form extends Component {
             onChange={event => this.handleChange(event)}
           />
           <p> What server were they on? </p>
-          <input
-            type='text'
+          <select
             placeholder='Server'
             name='serverName'
             value={this.state.serverName}
             onChange={event => this.handleChange(event)}
-          />
+          >
+            {this.state.servers.map((server) => {
+              return <option value={server}>{server}</option>
+            })}
+          </select>
           <button onClick={event => this.submitSearch(event)}>Grab that Glamour!</button>
         </form>
         <Results searchResults={this.state.searchResults} setChar={this.setChar}/>

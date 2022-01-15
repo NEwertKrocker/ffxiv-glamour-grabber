@@ -28,4 +28,14 @@ const fetchItem = (itemID) => {
     })
 }
 
-export { fetchChars, getCharOutfit, fetchItem };
+const fetchServers = () => {
+  return fetch(`https://xivapi.com/servers`, { mode: 'cors' })
+    .then(response =>
+      {if (response.ok){
+        return response.json()
+      }
+      throw response.message
+    })
+}
+
+export { fetchChars, getCharOutfit, fetchItem, fetchServers };
