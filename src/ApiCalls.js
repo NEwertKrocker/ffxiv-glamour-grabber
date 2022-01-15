@@ -18,4 +18,14 @@ const getCharOutfit = (charID) => {
     })
 }
 
-export { fetchChars, getCharOutfit };
+const fetchItem = (itemID) => {
+  return fetch(`https://xivapi.com/item/${itemID}`, { mode: 'cors' })
+    .then(response =>
+      {if (response.ok){
+        return response.json()
+      }
+      throw response.message
+    })
+}
+
+export { fetchChars, getCharOutfit, fetchItem };
