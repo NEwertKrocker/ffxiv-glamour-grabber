@@ -2,6 +2,7 @@ import { React, Component } from 'react';
 import { getCharOutfit, fetchItem } from '../ApiCalls.js';
 import { useParams } from 'react-router-dom';
 import Equipment from './Equipment';
+import EquipContainer from './EquipContainer'
 import '../css/Outfit.css';
 
 class Outfit extends Component {
@@ -29,7 +30,13 @@ class Outfit extends Component {
       parsedGearData[i]['type'] = gearTypes[i]
     }
     parsedGearData.splice(10, 3);
-    parsedGearData.forEach((item) => {
+    this.fetchItemNames(parsedGearData)
+    setTimeout(() => {this.setState({ parsedGear: parsedGearData })}, 500)
+    console.log("parsed in state>>>>", this.state.parsedGear)
+  }
+
+  fetchItemNames(gearset){
+    gearset.map((item) => {
       fetchItem(item.id)
         .then(data => item['name'] = data.Name)
       if(item.dye){
@@ -37,8 +44,6 @@ class Outfit extends Component {
         .then(data => item['dyeName'] = data.Name)
       }
     })
-    this.setState({ parsedGear: parsedGearData })
-    console.log("parsed in state>>>>", this.state.parsedGear)
   }
 
   componentDidMount(){
@@ -51,17 +56,13 @@ class Outfit extends Component {
   }
 
   render(){
-    let equipment = this.state.parsedGear.map((item) => {
-      return <Equipment key={item.id} id={item.id} dye={item.dyeName} type={item.type} name={item.name} />
-    })
+    console.log("parsed at beginning of render>>>>", this.state.parsedGear)
 
     return (
         <div className='outfit'>
           <img src={`${this.state.charData.Portrait}`} alt={`Portrait of ${this.state.charData.Name}`}/>
           <p> This is {`${this.state.charData.Name}'s outfit.`} </p>
-          <div className='equipment-container'>
-            {equipment}
-          </div>
+          <EquipContainer gear={this.state.parsedGear} />
         </div>
     )
   }
