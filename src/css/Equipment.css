@@ -1,4 +1,4 @@
-.item {
+.item-details {
   display: flex;
   color: white;
   background-color: #1d1d1d;
@@ -9,7 +9,7 @@
   font-size: larger;
 }
 
-.item:hover {
+.item-details:hover {
   border: 3px solid orange;
 }
 
@@ -22,7 +22,19 @@ img {
   border-radius: 5px;
 }
 
-.dye {
+.item-icon {
+  position: relative;
+  z-index: 1;
+}
+
+.item-icon::before {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  background: url('../Assets/item_icon_checked.png');
+}
+
+.dye-name {
   font-size: smaller;
   font-weight: lighter;
 }

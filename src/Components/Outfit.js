@@ -38,7 +38,10 @@ class Outfit extends Component {
   fetchItemNames(gearset){
     gearset.map((item) => {
       fetchItem(item.id)
-        .then(data => item['name'] = data.Name)
+        .then(data => {
+          item['name'] = data.Name;
+          item['icon'] = data.IconHD
+        })
       if(item.dye){
       fetchItem(item.dye)
         .then(data => item['dyeName'] = data.Name)
