@@ -1,6 +1,6 @@
 import { React, Component } from 'react';
 import { getCharOutfit, fetchItem } from '../ApiCalls.js';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Equipment from './Equipment';
 import EquipContainer from './EquipContainer'
 import '../css/Outfit.css';
@@ -10,6 +10,7 @@ class Outfit extends Component {
     super(props);
     this.state = {
       charID: props.id,
+      saveItem: props.saveItem,
       charData: {},
       charGear: {},
       parsedGear: []
@@ -59,13 +60,15 @@ class Outfit extends Component {
   }
 
   render(){
-    console.log("parsed at beginning of render>>>>", this.state.parsedGear)
 
     return (
         <div className='outfit'>
           <img src={`${this.state.charData.Portrait}`} alt={`Portrait of ${this.state.charData.Name}`}/>
           <p> This is {`${this.state.charData.Name}'s outfit.`} </p>
-          <EquipContainer gear={this.state.parsedGear} />
+          <EquipContainer gear={this.state.parsedGear} saveItem={this.state.saveItem}/>
+          <Link to='/saved'>
+            <button className='saved-btn'>Saved Items</button>
+          </Link>
         </div>
     )
   }
