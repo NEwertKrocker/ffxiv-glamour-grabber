@@ -1,0 +1,28 @@
+.item {
+  display: flex;
+  color: white;
+  background-color: #1d1d1d;
+  min-width: 20%;
+  border-radius: 5px;
+  border: 3px solid #1d1d1d;
+  margin: 5px;
+  font-size: larger;
+}
+
+.item:hover {
+  border: 3px solid orange;
+}
+
+p {
+  align-self: center;
+  padding: 15px;
+}
+
+img {
+  border-radius: 5px;
+}
+
+.dye {
+  font-size: smaller;
+  font-weight: lighter;
+}

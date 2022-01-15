@@ -1,11 +1,12 @@
 import React from 'react';
 import '../css/Equipment.css'
 
-const Equipment = ({ type, dye, name, id }) => {
+const Equipment = ({ id, dye, type, name }) => {
 
   return (
     <div className='item' id={id}>
-
+      <p>{name}</p>
+      <p>{dye}</p>
     </div>
   )
 }
