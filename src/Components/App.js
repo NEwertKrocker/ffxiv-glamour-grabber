@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import Form from './Form';
 import SelectedChar from './SelectedChar';
 import SavedItems from './SavedItems'
@@ -27,8 +27,10 @@ class App extends Component {
       name: name,
       type: type
     }
-    this.setState({ savedItems: [...this.state.savedItems, newItem] })
-    setTimeout(() => {this.storeItems()}, 500)
+    if(!this.state.savedItems.some((item) => {return item.id === newItem.id})){
+      this.setState({ savedItems: [...this.state.savedItems, newItem] })
+      setTimeout(() => {this.storeItems()}, 500)
+    }
   }
 
   deleteItem = (id) => {
@@ -59,7 +61,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <p>FFXIV Glamour Grabber</p>
+        <Link to={`/`}>
+          <p className='app-title'>FFXIV Glamour Grabber</p>
+        </Link>
         </header>
         <Routes>
           <Route path='/' element={<Form setChar={this.setChar}/>} />

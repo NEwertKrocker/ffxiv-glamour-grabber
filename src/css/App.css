@@ -15,6 +15,14 @@
   color: white;
 }
 
+.app-title {
+  color: white;
+}
+
+a:link {
+  text-decoration: none;
+}
+
 body {
   background-image: url('../Assets/background.jpeg');
   background-size: cover;
