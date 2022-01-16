@@ -1,11 +1,21 @@
 const fetchChars = (charName, serverName) => {
-  return fetch(`https://xivapi.com/character/search?name=${charName}&server=${serverName}`)
+  if(serverName === 'all'){
+    return fetch(`https://xivapi.com/character/search?name=${charName}`)
+      .then(response =>
+        {if (response.ok){
+          return response.json()
+        }
+        throw response.message
+      })
+  } else {
+    return fetch(`https://xivapi.com/character/search?name=${charName}&server=${serverName}`)
     .then(response =>
       {if (response.ok){
         return response.json()
       }
       throw response.message
     })
+  }
 }
 
 const getCharOutfit = (charID) => {

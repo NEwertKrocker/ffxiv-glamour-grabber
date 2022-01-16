@@ -28,7 +28,7 @@ class App extends Component {
       type: type
     }
     this.setState({ savedItems: [...this.state.savedItems, newItem] })
-    this.storeItems();
+    setTimeout(() => {this.storeItems()}, 500)
   }
 
   deleteItem = (id) => {

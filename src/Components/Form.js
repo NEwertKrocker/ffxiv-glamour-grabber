@@ -8,6 +8,7 @@ class Form extends Component {
     super(props);
     this.state = {
       charName: '',
+      serverName: 'all',
       servers: [],
       searchResults: [],
       setChar: props.setChar
@@ -55,6 +56,7 @@ class Form extends Component {
             value={this.state.serverName}
             onChange={event => this.handleChange(event)}
           >
+            <option value='all'>Search all</option>
             {this.state.servers.map((server) => {
               return <option value={server}>{server}</option>
             })}

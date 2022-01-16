@@ -16,7 +16,7 @@ const Results = ({ searchResults }) => {
   return(
     <div className='results-list'>
     {results}
-    <p> {!searchResults.length === 50 && '...and there are more! Better narrow your search.'} </p>
+    <p> {(searchResults.length == 50) && '...and there are more! Better narrow your search.'} </p>
     </div>
   )
 }
