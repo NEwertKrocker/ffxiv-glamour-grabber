@@ -1,0 +1,11 @@
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import Outfit from './Outfit';
+
+const SelectedChar = ({ saveItem }) => {
+  const id = useParams()['character'];
+  console.log(useParams());
+    return <Outfit id={id} saveItem={saveItem} />
+}
+
+export default SelectedChar;

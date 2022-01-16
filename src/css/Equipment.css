@@ -1,0 +1,53 @@
+.item-details {
+  display: flex;
+  color: white;
+  background-color: #1d1d1d;
+  width: 50%;
+  border-radius: 5px;
+  border: 3px solid #1d1d1d;
+  margin: 5px;
+  font-size: larger;
+  align-items: center;
+  text-align:left;
+  justify-content: flex-start;
+}
+
+.item-details:hover {
+  border: 3px solid orange;
+}
+
+p {
+  padding: 15px;
+}
+
+img {
+  border-radius: 5px;
+}
+
+.item-icon {
+  position: relative;
+  z-index: 1;
+}
+
+.item-icon::before {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  background: url('../Assets/item_icon_checked.png');
+}
+
+.dye-name {
+  font-size: smaller;
+  font-weight: lighter;
+}
+
+.discard-icon {
+  align-self: center;
+  margin-left: auto;
+}
+
+.item-name,
+.dye-name {
+  margin: 0px 0px 0px 20px;
+  padding: 0px;
+}
