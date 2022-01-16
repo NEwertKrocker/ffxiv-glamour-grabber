@@ -1,6 +1,6 @@
 import { React, Component } from 'react';
 import { getCharOutfit, fetchItem } from '../ApiCalls.js';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Equipment from './Equipment';
 import EquipContainer from './EquipContainer'
 import '../css/Outfit.css';
@@ -66,9 +66,6 @@ class Outfit extends Component {
           <img src={`${this.state.charData.Portrait}`} alt={`Portrait of ${this.state.charData.Name}`}/>
           <p> This is {`${this.state.charData.Name}'s outfit.`} </p>
           <EquipContainer gear={this.state.parsedGear} saveItem={this.state.saveItem}/>
-          <Link to='/saved'>
-            <button className='saved-btn'>Saved Items</button>
-          </Link>
         </div>
     )
   }

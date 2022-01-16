@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Equipment from './Equipment'
 import '../css/EquipContainer.css'
 
@@ -11,6 +12,9 @@ const EquipContainer = ({ gear, saveItem }) => {
   return (
     <div className='equip-container'>
       {equipment}
+      <Link to='/saved'>
+        <button className='saved-btn'>Saved Items</button>
+      </Link>
     </div>
   )
 }
