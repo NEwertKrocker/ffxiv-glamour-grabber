@@ -32,7 +32,7 @@ class Outfit extends Component {
     }
     parsedGearData.splice(10, 3);
     this.fetchItemNames(parsedGearData)
-    setTimeout(() => {this.setState({ parsedGear: parsedGearData })}, 500)
+    setTimeout(() => {this.setState({ parsedGear: parsedGearData })}, 1000)
     console.log("parsed in state>>>>", this.state.parsedGear)
   }
 

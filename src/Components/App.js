@@ -28,12 +28,31 @@ class App extends Component {
       type: type
     }
     this.setState({ savedItems: [...this.state.savedItems, newItem] })
+    this.storeItems();
   }
 
   deleteItem = (id) => {
     console.log(id)
     const filteredItems = this.state.savedItems.filter(item => item.id != id);
     this.setState({ savedItems: filteredItems });
+    console.log(this.state.savedItems)
+    setTimeout(() => {this.storeItems()}, 500)
+  }
+
+  storeItems = () => {
+    let stringifiedItems = JSON.stringify(this.state.savedItems);
+    localStorage.setItem('savedItems', stringifiedItems);
+  }
+
+  retrieveItems = () => {
+    let savedItems = localStorage.getItem('savedItems');
+    let parsedItems = JSON.parse(savedItems);
+    console.log("retrieved items to be set in state", parsedItems)
+    this.setState({ savedItems: parsedItems })
+  }
+
+  componentDidMount(){
+    this.retrieveItems();
   }
 
   render(){
