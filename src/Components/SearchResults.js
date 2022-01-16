@@ -18,6 +18,9 @@ const Results = ({ searchResults, searchError }) => {
     {results}
     {searchError}
     <p> {(searchResults.length === 50) && '...and there are more! Better narrow your search.'} </p>
+    <Link to='/saved'>
+      <button className='saved-btn'>Saved Items</button>
+    </Link>
     </div>
   )
 }
