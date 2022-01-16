@@ -6,3 +6,15 @@
   font-size: 18px;
   font-weight: bold;
 }
+
+@keyframes loading-msg {
+  0% {color: white;}
+  25% {color: cyan;}
+  50% {color: blue;}
+  100% {color: navy;}
+}
+
+.loading-msg {
+  animation-name: loading-msg;
+  animation-duration: 3s;
+}

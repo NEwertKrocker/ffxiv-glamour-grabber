@@ -13,7 +13,8 @@ class Outfit extends Component {
       saveItem: props.saveItem,
       charData: {},
       charGear: {},
-      parsedGear: []
+      parsedGear: [],
+      loading: true,
     }
   }
 
@@ -32,7 +33,7 @@ class Outfit extends Component {
     }
     parsedGearData.splice(10, 3);
     this.fetchItemNames(parsedGearData)
-    setTimeout(() => {this.setState({ parsedGear: parsedGearData })}, 1000)
+    setTimeout(() => {this.setState({ parsedGear: parsedGearData, loading: false })}, 1000)
     console.log("parsed in state>>>>", this.state.parsedGear)
   }
 
@@ -63,8 +64,9 @@ class Outfit extends Component {
 
     return (
         <div className='outfit'>
-          <img src={`${this.state.charData.Portrait}`} alt={`Portrait of ${this.state.charData.Name}`}/>
-          <p> This is {`${this.state.charData.Name}'s outfit.`} </p>
+          {this.state.loading && <p className='loading-msg'>Loading...</p>}
+          {!this.state.loading && <img src={`${this.state.charData.Portrait}`} alt={`Portrait of ${this.state.charData.Name}`}/>}
+          {!this.state.loading && <p> This is {`${this.state.charData.Name}'s outfit.`} </p>}
           <EquipContainer gear={this.state.parsedGear} saveItem={this.state.saveItem}/>
         </div>
     )

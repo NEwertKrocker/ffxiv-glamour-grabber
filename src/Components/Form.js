@@ -10,6 +10,7 @@ class Form extends Component {
       charName: '',
       serverName: 'all',
       servers: [],
+      searchError: '',
       searchResults: [],
       setChar: props.setChar
     }
@@ -21,8 +22,15 @@ class Form extends Component {
 
   submitSearch = event => {
     event.preventDefault();
+    this.setState({ searchError: '' });
     fetchChars(this.state.charName, this.state.serverName)
-      .then(data => this.setState({ searchResults: data.Results }))
+      .then(data => {
+        if(data.Pagination.ResultsTotal === 0){
+          this.setState({ searchError: 'Whoops! Looks like there\'s no one in Eorzea with that name. Try another search?'})
+        } else {
+          this.setState({ searchResults: data.Results })
+        }
+      })
     this.clearInputs();
   }
 
@@ -63,7 +71,7 @@ class Form extends Component {
           </select>
           <button onClick={event => this.submitSearch(event)}>Grab that Glamour!</button>
         </form>
-        <Results searchResults={this.state.searchResults} setChar={this.setChar}/>
+        <Results searchResults={this.state.searchResults} searchError={this.state.searchError} setChar={this.setChar}/>
       </div>
     )
   }
