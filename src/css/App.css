@@ -8,11 +8,24 @@ a:link {
   text-decoration: none;
 }
 
+html {
+  min-width: 100%;
+}
+
+body {
+  background-image: url('../Assets/background.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
 .App {
   text-align: center;
   color: white;
   font-weight: bold;
   height: 100vh;
+  width: 100%;
 }
 
 .App-header {
@@ -36,16 +49,9 @@ a:link {
   width: 62px;
 }
 
-body {
-  background-image: url('../Assets/background.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
-
 @media screen and (max-width: 600px){
   .App-header {
+    width: 100%;
     font-size: 22px;
   }
 }

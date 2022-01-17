@@ -65,7 +65,7 @@ class Outfit extends Component {
     return (
         <div className='outfit'>
           {this.state.loading && <p className='loading-msg'>Loading...</p>}
-          {!this.state.loading && <img src={`${this.state.charData.Portrait}`} alt={`Portrait of ${this.state.charData.Name}`}/>}
+          {!this.state.loading && <img className= 'portrait' src={`${this.state.charData.Portrait}`} alt={`Portrait of ${this.state.charData.Name}`}/>}
           {!this.state.loading && <p> This is {`${this.state.charData.Name}'s outfit.`} </p>}
           <EquipContainer gear={this.state.parsedGear} saveItem={this.state.saveItem}/>
         </div>
