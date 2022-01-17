@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import Form from './Form';
 import SelectedChar from './SelectedChar';
 import SavedItems from './SavedItems'
 import '../Assets/background.jpeg';
+import crystal from '../Assets/Aetheryte.png';
 import '../css/App.css';
 
 class App extends Component {
@@ -27,8 +28,10 @@ class App extends Component {
       name: name,
       type: type
     }
-    this.setState({ savedItems: [...this.state.savedItems, newItem] })
-    this.storeItems();
+    if(!this.state.savedItems.some((item) => {return item.id === newItem.id})){
+      this.setState({ savedItems: [...this.state.savedItems, newItem] })
+      setTimeout(() => {this.storeItems()}, 500)
+    }
   }
 
   deleteItem = (id) => {
@@ -59,14 +62,18 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <p>FFXIV Glamour Grabber</p>
+        <Link to={`/`}>
+          <img className='crystal' src={crystal} />
+          <p className='app-title'>FFXIV Glamour Grabber</p>
+          <img className='crystal' src={crystal} />
+        </Link>
         </header>
         <Routes>
           <Route path='/' element={<Form setChar={this.setChar}/>} />
-          <Route path='/:character' element={<SelectedChar saveItem={this.saveItem}/>} />
+          <Route path='/character/:character' element={<SelectedChar saveItem={this.saveItem}/>} />
           <Route path='/saved' element={<SavedItems savedItems={this.state.savedItems} deleteItem={this.deleteItem}/>} />
+          <Route path='*' element={<Form setChar={this.setChar}/>} />
         </Routes>
-
       </div>
     );
   }

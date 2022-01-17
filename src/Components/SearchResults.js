@@ -3,12 +3,12 @@ import Result from './Result';
 import { Link } from 'react-router-dom';
 import '../css/SearchResults.css'
 
-const Results = ({ searchResults }) => {
+const Results = ({ searchResults, searchError }) => {
 
   let results = searchResults.map((result) => {
     const id = result.ID;
     return (
-      <Link to={`/${id}`}>
+      <Link to={`/character/${id}`}>
         <Result avatar={result.Avatar} key={id} id={id} name={result.Name} server={result.Server} />
       </Link>)
   })
@@ -16,7 +16,11 @@ const Results = ({ searchResults }) => {
   return(
     <div className='results-list'>
     {results}
-    <p> {!searchResults.length === 50 && '...and there are more! Better narrow your search.'} </p>
+    {searchError}
+    <p> {(searchResults.length === 50) && '...and there are more! Better narrow your search.'} </p>
+    <Link to='/saved'>
+      <button className='saved-btn'>Saved Items</button>
+    </Link>
     </div>
   )
 }

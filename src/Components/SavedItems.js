@@ -12,6 +12,7 @@ const SavedItems = ({ savedItems, deleteItem }) => {
   return(
     <div className='saved-item-container'>
       {equipment}
+      {!savedItems.length && <p>No saved items.</p>}
       <Link to='/'>
         <button className='return-btn'> Back to Search </button>
       </Link>
