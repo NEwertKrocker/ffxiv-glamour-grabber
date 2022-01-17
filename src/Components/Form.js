@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { fetchChars, fetchServers } from '../ApiCalls';
 import Results from './SearchResults';
 import '../css/Form.css';
@@ -84,3 +85,7 @@ class Form extends Component {
 }
 
 export default Form;
+
+Form.propTypes = {
+  setChar: PropTypes.func
+}

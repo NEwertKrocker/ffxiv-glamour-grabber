@@ -1,4 +1,5 @@
 import { React, Component } from 'react';
+import PropTypes from 'prop-types';
 import { getCharOutfit, fetchItem } from '../ApiCalls.js';
 import { useParams } from 'react-router-dom';
 import Equipment from './Equipment';
@@ -75,3 +76,8 @@ class Outfit extends Component {
 
 
 export default Outfit;
+
+Outfit.propTypes = {
+  id: PropTypes.number,
+  saveItem: PropTypes.func,
+}

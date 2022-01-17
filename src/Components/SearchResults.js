@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Result from './Result';
 import { Link } from 'react-router-dom';
 import '../css/SearchResults.css'
@@ -26,3 +27,8 @@ const Results = ({ searchResults, searchError }) => {
 }
 
 export default Results;
+
+Results.propTypes = {
+  searchResults: PropTypes.array,
+  searchError: PropTypes.string
+}
