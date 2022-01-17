@@ -17,4 +17,5 @@
 .loading-msg {
   animation-name: loading-msg;
   animation-duration: 3s;
+  animation-iteration-count: infinite;
 }

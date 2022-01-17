@@ -4,6 +4,7 @@ import Form from './Form';
 import SelectedChar from './SelectedChar';
 import SavedItems from './SavedItems'
 import '../Assets/background.jpeg';
+import crystal from '../Assets/Aetheryte.png';
 import '../css/App.css';
 
 class App extends Component {
@@ -62,7 +63,9 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
         <Link to={`/`}>
+          <img className='crystal' src={crystal} />
           <p className='app-title'>FFXIV Glamour Grabber</p>
+          <img className='crystal' src={crystal} />
         </Link>
         </header>
         <Routes>
