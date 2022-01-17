@@ -53,3 +53,11 @@ button:active {
   animation-duration: 3s;
   animation-iteration-count: infinite;
 }
+
+@media screen and (max-width: 55em) {
+  input,
+  select,
+  option {
+   width: 50%;
+  }
+}

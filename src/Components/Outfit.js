@@ -77,6 +77,6 @@ class Outfit extends Component {
 export default Outfit;
 
 Outfit.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.string,
   saveItem: PropTypes.func,
 }

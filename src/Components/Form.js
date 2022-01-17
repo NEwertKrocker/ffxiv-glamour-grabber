@@ -72,7 +72,7 @@ class Form extends Component {
           >
             <option value='all'>Search all</option>
             {this.state.servers.map((server) => {
-              return <option value={server}>{server}</option>
+              return <option key={server} value={server}>{server}</option>
             })}
           </select>
           <button onClick={event => this.submitSearch(event)}>Grab that Glamour!</button>
