@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Equipment from './Equipment'
 import '../css/EquipContainer.css'
 
@@ -20,3 +21,8 @@ const EquipContainer = ({ gear, saveItem }) => {
 }
 
 export default EquipContainer;
+
+EquipContainer.propTypes = {
+  gear: PropTypes.array,
+  saveItem: PropTypes.func,
+}

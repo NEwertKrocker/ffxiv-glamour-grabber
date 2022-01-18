@@ -13,6 +13,10 @@
   border: 3px solid orange;
 }
 
+/* a {
+  display: inline-block;
+} */
+
 p {
   align-self: center;
   padding: 15px;

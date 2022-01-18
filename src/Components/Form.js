@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { fetchChars, fetchServers } from '../ApiCalls';
 import Results from './SearchResults';
 import '../css/Form.css';
@@ -71,7 +72,7 @@ class Form extends Component {
           >
             <option value='all'>Search all</option>
             {this.state.servers.map((server) => {
-              return <option value={server}>{server}</option>
+              return <option key={server} value={server}>{server}</option>
             })}
           </select>
           <button onClick={event => this.submitSearch(event)}>Grab that Glamour!</button>
@@ -84,3 +85,7 @@ class Form extends Component {
 }
 
 export default Form;
+
+Form.propTypes = {
+  setChar: PropTypes.func
+}

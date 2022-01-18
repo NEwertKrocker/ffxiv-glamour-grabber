@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../css/Result.css'
 
 const Result = ({ avatar, id, name, server }) => {
@@ -13,3 +14,10 @@ const Result = ({ avatar, id, name, server }) => {
 }
 
 export default Result;
+
+Result.propTypes = {
+  avatar: PropTypes.string,
+  id: PropTypes.number,
+  name: PropTypes.string,
+  server: PropTypes.string
+}

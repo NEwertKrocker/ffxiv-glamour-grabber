@@ -35,10 +35,8 @@ class App extends Component {
   }
 
   deleteItem = (id) => {
-    console.log(id)
     const filteredItems = this.state.savedItems.filter(item => item.id != id);
     this.setState({ savedItems: filteredItems });
-    console.log(this.state.savedItems)
     setTimeout(() => {this.storeItems()}, 500)
   }
 
@@ -50,7 +48,6 @@ class App extends Component {
   retrieveItems = () => {
     let savedItems = localStorage.getItem('savedItems');
     let parsedItems = JSON.parse(savedItems);
-    console.log("retrieved items to be set in state", parsedItems)
     this.setState({ savedItems: parsedItems })
   }
 
@@ -62,9 +59,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-        <Link to={`/`}>
+        <Link className='app-title' to={`/`}>
           <img className='crystal' src={crystal} />
-          <p className='app-title'>FFXIV Glamour Grabber</p>
+          <p>FFXIV Glamour Grabber</p>
           <img className='crystal' src={crystal} />
         </Link>
         </header>

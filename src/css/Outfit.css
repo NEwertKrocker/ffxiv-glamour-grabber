@@ -19,3 +19,27 @@
   animation-duration: 3s;
   animation-iteration-count: infinite;
 }
+
+@media screen and (max-width: 700px) {
+  .outfit {
+    width: 100%
+  }
+
+  .portrait {
+    width: 480px;
+    height: 655px;
+    object-fit: contain;
+  }
+
+  .item-details {
+    width: 90%
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .portrait {
+    width: 360px;
+    height: 490px;
+    object-fit: contain;
+  }
+}
