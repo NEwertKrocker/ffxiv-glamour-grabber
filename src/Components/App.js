@@ -63,7 +63,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-        <Link className='app-title' to={`/gg`}>
+        <Link className='app-title' to={`/`}>
           <img className='crystal' src={crystal} />
           <p>FFXIV Glamour Grabber</p>
           <img className='crystal' src={crystal} />
