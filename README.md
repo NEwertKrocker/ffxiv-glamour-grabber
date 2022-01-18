@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# FFXIV: Glamour Grabber
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Try it online here!](http://newertkrocker.github.io/ffxiv-glamour-grabber)
 
-## Available Scripts
+## Table of Contents
+  - [Abstract](#abstract)
+  - [Technologies](#technologies)
+  - [Illustrations](#illustrations)
+  - [Install + Setup](#install-+-setup)
+  - [Contributors](#contributors)
+  - [Wins](#wins)
+  - [Challenges](#challenges)
+  - [Improvements](#improvements)
+  - [Project Specs](#project-specs)
 
-In the project directory, you can run:
+## Abstract
 
-### `npm start`
+This "Glamour Grabber" app is a project built over a long weekend, as a demonstration of what I've learned so far about React and React Router. It's meant to quickly let you search for a character in the hit MMO *Final Fantasy XIV* and pull up a list of their current equipment (including any "glamours" that equipment may be under). If you see someone with a cool outfit while you're running a dungeon, why not quickly look up their *fashionable hat* or their *adorable boots* so that you can see about acquiring some for yourself when you've got a free moment?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+(And sure, that's something you can do on the game's official site -- but this is streamlined, and works great on mobile!)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies
+  - Javascript
+  - React
+  - React Router
+  - Cypress
+  - HTML 5
+  - CSS
 
-### `npm test`
+## Illustrations
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![GIF goes here](https://user-images.githubusercontent.com/86936705/150018639-d77da7f7-b718-473e-8e64-6a3d6967eed6.gif)
 
-### `npm run build`
+## Install + Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[Visit the deployed site!](http://newertkrocker.github.io/ffxiv-glamour-grabber)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run locally:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Run `git clone git@github.com:NEwertKrocker/ffxiv-glamour-grabber.git` in your terminal
+- `cd ffxiv-glamour-grabber`
+- Run `npm install` to install all dependencies
+- Run `npm start`
+- The project should open in your browser!
 
-### `npm run eject`
+## Contributors
+  - [Nate Ewert-Krocker](https://github.com/NEwertKrocker)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Wins
+  - This project really helped me to feel comfortable with React and React Router.
+  - It was a good opportunity to practice designing component architecture and experimenting with hooks.
+  - I was able to implement localStorage support, so the site will hold on to your "shopping list" between site visits!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Challenges
+  - It took a little doing to figure out how to make React's state capabilities and localStorage to play nicely with each other, but I got there.
+  - I wasn't able to implement some of the extension features that I had hoped to, because the weekend wasn't quite long enough!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Improvements
+  - Items can still be "selected" on the "Saved Items" page, even though it doesn't do anything functionally.
+  - I'd like to add links to the item pages on the official Eorzea Database so app users can easily figure out how to obtain the item for themselves!
+  - Similarly, a link to the item's listing on Universalis.app would be another useful addition.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Project Specs
+  - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/showcase.html).
