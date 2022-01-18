@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Form from './Form';
 import SelectedChar from './SelectedChar';
 import SavedItems from './SavedItems'
@@ -12,7 +13,7 @@ class App extends Component {
     super(props)
     this.state = {
       charID: 0,
-      savedItems: []
+      savedItems: [],
     }
   }
 
@@ -48,7 +49,9 @@ class App extends Component {
   retrieveItems = () => {
     let savedItems = localStorage.getItem('savedItems');
     let parsedItems = JSON.parse(savedItems);
-    this.setState({ savedItems: parsedItems })
+    if(parsedItems){
+      this.setState({ savedItems: parsedItems })
+    }
   }
 
   componentDidMount(){
@@ -77,3 +80,8 @@ class App extends Component {
 }
 
 export default App;
+
+App.propTypes = {
+  charID: PropTypes.number,
+  savedItems: PropTypes.array,
+}
