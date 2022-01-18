@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/ffxiv-glamour-grabber/static/css/main.cb391855.css",
-    "main.js": "/ffxiv-glamour-grabber/static/js/main.9944a0a1.js",
+    "main.js": "/ffxiv-glamour-grabber/static/js/main.7940ffa6.js",
     "static/js/787.2972e485.chunk.js": "/ffxiv-glamour-grabber/static/js/787.2972e485.chunk.js",
     "static/media/background.jpeg": "/ffxiv-glamour-grabber/static/media/background.c67f5b6b8f95cddd88bc.jpeg",
     "static/media/Aetheryte.png": "/ffxiv-glamour-grabber/static/media/Aetheryte.c2ff0cc66fbf4ed38ea2.png",
     "index.html": "/ffxiv-glamour-grabber/index.html",
     "main.cb391855.css.map": "/ffxiv-glamour-grabber/static/css/main.cb391855.css.map",
-    "main.9944a0a1.js.map": "/ffxiv-glamour-grabber/static/js/main.9944a0a1.js.map",
+    "main.7940ffa6.js.map": "/ffxiv-glamour-grabber/static/js/main.7940ffa6.js.map",
     "787.2972e485.chunk.js.map": "/ffxiv-glamour-grabber/static/js/787.2972e485.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cb391855.css",
-    "static/js/main.9944a0a1.js"
+    "static/js/main.7940ffa6.js"
   ]
 }
