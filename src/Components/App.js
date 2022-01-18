@@ -13,7 +13,7 @@ class App extends Component {
     super(props)
     this.state = {
       charID: 0,
-      savedItems: []
+      savedItems: [],
     }
   }
 
