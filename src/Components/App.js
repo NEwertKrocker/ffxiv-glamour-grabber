@@ -49,7 +49,9 @@ class App extends Component {
   retrieveItems = () => {
     let savedItems = localStorage.getItem('savedItems');
     let parsedItems = JSON.parse(savedItems);
-    this.setState({ savedItems: parsedItems })
+    if(parsedItems){
+      this.setState({ savedItems: parsedItems })
+    }
   }
 
   componentDidMount(){
