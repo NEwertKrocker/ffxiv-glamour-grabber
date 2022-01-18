@@ -63,7 +63,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-        <Link className='app-title' to={`/`}>
+        <Link className='app-title' to={`/gg`}>
           <img className='crystal' src={crystal} />
           <p>FFXIV Glamour Grabber</p>
           <img className='crystal' src={crystal} />
@@ -71,9 +71,9 @@ class App extends Component {
         </header>
         <Routes>
           <Route path='/' element={<Form setChar={this.setChar}/>} />
-          <Route path='/character/:character' element={<SelectedChar saveItem={this.saveItem}/>} />
-          <Route path='/saved' element={<SavedItems savedItems={this.state.savedItems} deleteItem={this.deleteItem}/>} />
-          <Route path='*' element={<ErrorPage />} />
+            <Route path='/character/:character' element={<SelectedChar saveItem={this.saveItem}/>} />
+            <Route path='/saved' element={<SavedItems savedItems={this.state.savedItems} deleteItem={this.deleteItem}/>} />
+          <Route path='/*' element={<ErrorPage />} />
         </Routes>
       </div>
     );
