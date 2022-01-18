@@ -27,7 +27,7 @@ This "Glamour Grabber" app is a project built over a long weekend, as a demonstr
 
 ## Illustrations
 
-![GIF goes here](ffxiv-gg.gif)
+![GIF goes here](https://user-images.githubusercontent.com/86936705/150018639-d77da7f7-b718-473e-8e64-6a3d6967eed6.gif)
 
 ## Install + Setup
 
