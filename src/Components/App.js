@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Form from './Form';
 import SelectedChar from './SelectedChar';
 import SavedItems from './SavedItems'
+import ErrorPage from './404';
 import '../Assets/background.jpeg';
 import crystal from '../Assets/Aetheryte.png';
 import '../css/App.css';
@@ -72,7 +73,7 @@ class App extends Component {
           <Route path='/' element={<Form setChar={this.setChar}/>} />
           <Route path='/character/:character' element={<SelectedChar saveItem={this.saveItem}/>} />
           <Route path='/saved' element={<SavedItems savedItems={this.state.savedItems} deleteItem={this.deleteItem}/>} />
-          <Route path='*' element={<Form setChar={this.setChar}/>} />
+          <Route path='*' element={<ErrorPage />} />
         </Routes>
       </div>
     );
