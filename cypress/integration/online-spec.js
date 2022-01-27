@@ -74,20 +74,20 @@ describe('Selecting and saving items', () => {
     cy.wait(4000);
     cy.get('.result').click();
   })
-  it('should allow for clicking and selecting items', () => {
+  it.skip('should allow for clicking and selecting items', () => {
     cy.get('#34023').click();
     cy.get('#34026').click();
     cy.get('#30243').click();
     cy.get('.true').should('have.length', 3);
   })
-  it('should keep those saved items on the saved items page', () => {
+  it.skip('should keep those saved items on the saved items page', () => {
     cy.get('.saved-btn').click();
     cy.get('#34023');
     cy.get('#34026');
     cy.get('#30243');
     cy.get('.item-details').should('have.length', 3);
   })
-  it('should keep those saved items if you leave the page', () => {
+  it.skip('should keep those saved items if you leave the page', () => {
     cy.get('.return-btn').click();
     cy.visit('http://localhost:3000/saved');
     cy.get('#34023');
@@ -95,13 +95,13 @@ describe('Selecting and saving items', () => {
     cy.get('#30243');
     cy.get('.item-details').should('have.length', 3);
   })
-  it('should allow you to discard saved items', () => {
+  it.skip('should allow you to discard saved items', () => {
     cy.get('.discard-icon').first().click();
     cy.get('.item-details').should('have.length', 2);
     cy.get('#34026');
     cy.get('#30243');
   })
-  it('should allow you to return to the search page', () => {
+  it.skip('should allow you to return to the search page', () => {
     cy.get('.return-btn').click();
     cy.get('form').contains('Whose outfit do you want to steal?');
     cy.get('form').contains('What server were they on?');
