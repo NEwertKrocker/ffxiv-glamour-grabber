@@ -1,6 +1,6 @@
 # FFXIV: Glamour Grabber
 
-[Try it online here!](http://newertkrocker.github.io/ffxiv-glamour-grabber)
+[Try it online here!](https://ffxiv-gg.herokuapp.com/)
 
 ## Table of Contents
   - [Abstract](#abstract)
@@ -33,7 +33,7 @@ This "Glamour Grabber" app is a project built over a long weekend, as a demonstr
 
 ## Install + Setup
 
-[Visit the deployed site!](http://newertkrocker.github.io/ffxiv-glamour-grabber)
+[Visit the deployed site!](https://ffxiv-gg.herokuapp.com/)
 
 To run locally:
 
